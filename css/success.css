@@ -1,0 +1,62 @@
+/* ===== עיצוב ייחודי לדף סיום הטופס ===== */
+.done {
+  text-align: center;
+  padding: 40px 5%;
+}
+
+.check {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background-color: #4E9A51;
+  color: #fff;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pop 0.7s ease-out;
+}
+
+@keyframes pop {
+  0%   { transform: scale(0);  }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.done h2 {
+  color: var(--primary);
+  font-size: 2em;
+}
+
+.done ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.done li a {
+  display: block;
+  padding: 8px 18px;
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.done li a:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .done h2 {
+    font-size: 1.5em;
+  }
+
+  .done ul {
+    flex-direction: column;
+  }
+}

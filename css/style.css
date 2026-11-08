@@ -1,0 +1,232 @@
+/* ===== Give&Shine - קובץ עיצוב משותף לכל דפי האתר ===== */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* למידה עצמית 1: משתני CSS (Custom Properties) */
+:root {
+  --bg: #FFF8EC;          /* צבע הרקע של האתר */
+  --surface: #FFFFFF;
+  --primary: #1F6F78;     /* טורקיז */
+  --primary-dark: #17565D;
+  --accent: #F4A23B;      /* כתום שמש */
+  --sun: #FFC857;
+  --text: #2E3A40;
+  --muted: #6B7780;
+  --radius: 18px;
+  --shadow: 0 6px 20px rgba(31, 111, 120, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rubik', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== כותרת ראשית ===== */
+header {
+  position: sticky;           /* הכותרת נשארת למעלה בגלילה */
+  top: 0;
+  z-index: 10;
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+header > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 12px 0;
+  text-decoration: none;
+}
+
+header img {
+  width: 56px;
+  animation: spin 18s linear infinite;   /* אנימציה: הלוגו מסתובב לאט */
+}
+
+header h1 {
+  font-size: 1.8em;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+header h1 span {
+  color: var(--accent);
+}
+
+header p {
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ===== פריסה: aside + main ===== */
+.layout {
+  display: flex;
+  gap: 3%;
+  width: 90%;
+  margin: 30px auto;
+  flex: 1;
+  align-items: flex-start;
+}
+
+aside {
+  width: 22%;
+  position: sticky;
+  top: 110px;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+aside h2 {
+  font-size: 1.1em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color 0.3s, padding-right 0.3s;
+}
+
+nav a:hover {
+  background-color: #E3F1EF;
+  padding-right: 22px;
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+main {
+  width: 75%;
+}
+
+main > h2 {
+  font-size: 2em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+main > h2 + p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+section,
+article {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+section h3,
+article h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* כפתור כללי */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #E08C1F;
+}
+
+/* ===== כותרת תחתונה ===== */
+footer {
+  background-color: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 24px 5%;
+}
+
+footer a {
+  color: var(--sun);
+}
+
+footer p + p {
+  margin-top: 6px;
+  font-size: 0.9em;
+}
+
+/* ===== רספונסיביות ===== */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  aside,
+  main {
+    width: 100%;
+  }
+
+  aside {
+    position: static;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  header p {
+    display: none;
+  }
+}

@@ -1,0 +1,119 @@
+/* ===== עיצוב ייחודי לדף ההצטרפות (טופס) ===== */
+form {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+fieldset {
+  border: 2px solid #E3F1EF;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 4%;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.field {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field:has(textarea),
+.field:has(.options) {
+  width: 100%;
+}
+
+.label,
+.field > label {
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #D8E3E4;
+  border-radius: 10px;
+  font: inherit;
+  background-color: #FBFDFD;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* בדיקות תקינות - מסגרת אדומה רק אחרי שהמשתמש התחיל להקליד */
+input[placeholder]:not(:placeholder-shown):invalid {
+  border-color: #E2504C;
+}
+
+input[placeholder]:not(:placeholder-shown):valid {
+  border-color: #4E9A51;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.options label {
+  background-color: #E3F1EF;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.options label:has(input:checked) {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+output {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.agree {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn.reset {
+  background-color: #8A979E;
+}
+
+@media (max-width: 800px) {
+  .field {
+    width: 100%;
+  }
+}

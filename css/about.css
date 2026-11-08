@@ -1,0 +1,110 @@
+/* ===== עיצוב ייחודי לדף אודות ===== */
+blockquote {
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-right: 5px solid var(--accent);
+  background-color: #FFF1D6;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+mark {
+  background-color: var(--sun);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.values ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.values li {
+  flex: 1 1 45%;
+  position: relative;
+  padding: 12px 40px 12px 12px;
+  background-color: #E3F1EF;
+  border-radius: 12px;
+}
+
+.values li::before {
+  content: "★";
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  color: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+caption {
+  text-align: right;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: right;
+}
+
+thead th {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F3F8F7;
+}
+
+tbody tr:hover {
+  background-color: #FFF1D6;
+}
+
+details {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 10px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+details[open] summary {
+  color: var(--accent);
+}
+
+.download {
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary) 0%, #2A8A95 100%);
+  color: #fff;
+}
+
+.download h3 {
+  color: #fff;
+}
+
+.download p {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 800px) {
+  .values li {
+    flex-basis: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+    font-size: 0.9em;
+  }
+}
